@@ -1,0 +1,445 @@
+/**=====================
+     Modal CSS Start
+==========================**/
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scale {
+
+    0%,
+    100% {
+        transform: none;
+    }
+
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 30px var(--theme-color);
+    }
+}
+
+.theme-modal {
+    .modal-dialog {
+        .modal-content {
+            border: none;
+
+            .modal-header {
+                border-bottom: none;
+                padding: calc(8px + (16 - 8) * ((100vw - 320px) / (1920 - 320))) calc(17px + (16 - 17) * ((100vw - 320px) / (1920 - 320)));
+
+                .modal-title {
+                    font-weight: 600;
+                    font-size: 20px;
+                    width: 95%;
+                    margin-top: -4px;
+
+                    @include mq-max(sm) {
+                        margin-top: 0;
+                    }
+                }
+
+                .btn-close {
+                    @include flex_common;
+                    position: absolute;
+                    top: -15px;
+                    right: -15px;
+                    background-color: var(--theme-color);
+                    opacity: 1;
+                    background-image: none;
+                    border-radius: 4px;
+                    font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
+                    color: $white;
+                    margin: 0;
+                    padding: 8px;
+                    z-index: 1;
+
+                    [dir="rtl"] & {
+                        right: unset;
+                        left: -15px;
+                    }
+
+                    &:focus {
+                        box-shadow: none;
+                    }
+
+                    @include mq-max(sm) {
+                        right: 13px;
+                        top: 13px;
+
+                        [dir="rtl"] & {
+                            right: unset;
+                            left: 13px;
+                        }
+
+                        i {
+                            @include mq-max(sm) {
+                                margin-top: -1px;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .modal-footer {
+                border: none;
+                padding: calc(8px + (16 - 8) * ((100vw - 320px) / (1920 - 320))) calc(17px + (16 - 17) * ((100vw - 320px) / (1920 - 320)));
+                gap: 8px;
+
+                button {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+.modal {
+    .modal-body {
+        h5 {
+            font-weight: 700;
+            font-size: calc(17px + (25 - 17) * ((100vw - 320px) / (1920 - 320)));
+            margin-bottom: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+        }
+
+        .button-box {
+            @include flex_common ($dis: flex, $align: center, $justify: end);
+        }
+
+        .btn--no {
+            margin-left: auto;
+            margin-right: 15px;
+            color: #fff !important;
+            background-color: #6c757d !important;
+        }
+    }
+
+    .btn-close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+}
+
+// Remove Coupon
+.remove-coupon {
+    .modal-dialog {
+        .modal-content {
+            .modal-header {
+                justify-content: center;
+                padding-bottom: 0;
+            }
+
+            .modal-body {
+                padding-bottom: 0;
+
+                .remove-box {
+                    .checkmark {
+                        @include pseudowh($width: 56px, $height: 56px);
+                        border-radius: 50%;
+                        display: block;
+                        stroke-width: 2;
+                        stroke: $white;
+                        stroke-miterlimit: 10;
+                        margin: 0 auto 10px;
+                        box-shadow: inset 0px 0px 0px var(--theme-color);
+                        animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+
+                        .checkmark__circle {
+                            stroke-dasharray: 166;
+                            stroke-dashoffset: 166;
+                            stroke-width: 2;
+                            stroke-miterlimit: 10;
+                            stroke: var(--theme-color);
+                            fill: none;
+                            animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+                        }
+
+                        .checkmark__check {
+                            transform-origin: 50% 50%;
+                            stroke-dasharray: 48;
+                            stroke-dashoffset: 48;
+                            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+                        }
+                    }
+
+                    p {
+                        text-align: center;
+                        line-height: 1.6;
+                        margin: 0;
+                        color: $content-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.order-offcanvas {
+    .offcanvas-header {
+        padding: 18px;
+
+        .offcanvas-title {
+            color: $title-color;
+            font-weight: 600;
+        }
+
+        .btn-close {
+            background-color: var(--theme-color);
+            opacity: 1;
+            background-image: none;
+            @include pseudowh($width: 33px, $height: 33px);
+            padding: 0;
+            margin: 0;
+
+            i {
+                color: $white;
+            }
+        }
+    }
+
+    .offcanvas-body {
+        .order-date {
+            h6 {
+                color: $title-color;
+            }
+        }
+
+        .custome-accordion {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 21px;
+            margin-top: 22px;
+
+            .accordion-item {
+                width: 100%;
+                border: none;
+
+                .accordion-header {
+                    .accordion-button {
+                        background-color: #f3f3f3;
+                        padding: 10px 17px;
+                        border-radius: 3px;
+                        font-weight: 600;
+
+                        &::after {
+                            content: none;
+                        }
+
+                        &::before {
+                            @include pos($pos: absolute, $content: "\f078");
+                            font-family: "Font Awesome 5 Free";
+                            font-weight: 900;
+                            @include center(vertical);
+                            right: 17px;
+                        }
+
+                        &:not(.collapsed) {
+                            color: $title-color;
+                            box-shadow: none;
+
+                            &::before {
+                                transform: rotate(-180deg);
+                                top: 25%;
+                            }
+                        }
+
+                        &:focus {
+                            border-color: transparent;
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// choose modal
+.media-modal {
+    h2 {
+        font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    .nav-tabs {
+        border-color: $border-color;
+
+        .nav-link {
+            border-color: transparent;
+            cursor: pointer;
+        }
+
+        .nav-link.active {
+            background-color: #f2f2f2;
+        }
+    }
+
+    .select-top-panel {
+        margin-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $border-color;
+        display: flex;
+        gap: calc(9px + (25 - 9) * ((100vw - 320px) / (1920 - 320)));
+        justify-content: space-between;
+
+        >div {
+            width: 50%;
+
+            @include mq-max(md) {
+                width: 100%;
+            }
+        }
+
+        select {
+            width: 25%;
+
+            @include mq-max(md) {
+                width: 100%;
+            }
+        }
+    }
+
+    .content-section {
+        padding: calc(15px + (35 - 15) * ((100vw - 320px) / (1920 - 320))) 0;
+        min-height: 45vh;
+
+        .card {
+            padding: 8px;
+            border: 1px solid $border-color;
+            border-radius: 3px;
+
+            .option-btn {
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                background-color: #f5f5f5;
+                padding: 3px 0;
+
+                [dir="rtl"] & {
+                    right: unset;
+                    left: 10px;
+                }
+
+                img {
+                    width: 16px;
+                }
+            }
+
+            .card-img-top {
+                height: 180px;
+            }
+
+            .card-body {
+                padding: 5px 0 0 0;
+
+                .card-text {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    margin-bottom: 0;
+                    font-size: 13px;
+                }
+
+                span {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        &.drop-files-sec {
+            text-align: center;
+            @include flex_common;
+            flex-wrap: wrap;
+            padding: 0;
+            border: 1px dashed var(--theme-color);
+            border-radius: calc(9px + (25 - 9) * ((100vw - 320px) / (1920 - 320)));
+            margin: calc(13px + (25 - 13) * ((100vw - 320px) / (1920 - 320))) 5px;
+
+            i {
+                display: block;
+                width: 100%;
+            }
+
+            h2 {
+                font-size: calc(17px + (25 - 17) * ((100vw - 320px) / (1920 - 320)));
+
+                span {
+                    display: block;
+                    margin-top: calc(4px + (14 - 4) * ((100vw - 320px) / (1920 - 320)));
+                    font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    font-weight: 400;
+                    opacity: 0.55;
+                }
+
+                a {
+                    display: block;
+                    margin-top: calc(4px + (14 - 4) * ((100vw - 320px) / (1920 - 320)));
+                    font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+                }
+            }
+
+            i {
+                font-size: calc(31px + (45 - 31) * ((100vw - 320px) / (1920 - 320)));
+            }
+        }
+
+        &.select-file-section {
+            height: 440px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+    }
+
+    .modal-footer {
+        justify-content: space-between;
+        display: flex;
+
+        .left-part {
+            display: flex;
+            align-items: center;
+            text-align: left;
+
+            .file-detail {
+                h6 {
+                    margin-bottom: 6px;
+                }
+            }
+        }
+    }
+}
+
+.media-modal {
+    .modal-body {
+        .tab-content {
+            .tab-pane {
+                .select-top-panel {
+                    >div {
+                        .form-control {
+                            padding: calc(5px + (6 - 5) * ((100vw - 320px) / (1920 - 320))) calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320)));
+                            font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                        }
+                    }
+
+                    .form-select {
+                        padding-top: calc(5px + (6 - 5) * ((100vw - 320px) / (1920 - 320)));
+                        padding-bottom: calc(5px + (6 - 5) * ((100vw - 320px) / (1920 - 320)));
+                        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                        padding-left: calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320)));
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**=====================
+     Modal CSS End
+==========================**/

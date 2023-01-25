@@ -1,0 +1,92 @@
+/**=====================
+     Reviews CSS start
+==========================**/
+.review-users {
+    padding: 30px 0;
+    display: flex;
+    align-items: flex-start;
+
+    &__img {
+        img {
+            @include pseudowh($width: 46px, $height: 46px);
+            border-radius: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__detail {
+        margin-left: 10px;
+    }
+
+    &__box {
+        h5 {
+            text-transform: capitalize;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        h4 {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    p {
+        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+        color: #777777;
+        line-height: 1.6;
+    }
+
+    &:not(:last-of-type) {
+        border-bottom: 1px solid $light-gray;
+    }
+
+    @media only screen and (max-width: 500px) {
+        & {
+            flex-direction: column;
+            align-items: center;
+
+            &__detail {
+                text-align: center;
+                margin-left: 0 !important;
+            }
+        }
+
+        p {
+            text-align: justify;
+            word-break: normal;
+            hyphens: auto;
+        }
+
+        &__box {
+            margin-top: 7px;
+            text-align: center;
+
+            h4 {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.star-box {
+    display: flex;
+    align-items: center;
+
+    svg {
+        @include pseudowh($width: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320))), $height: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320))));
+        color: $star-color;
+        fill: $star-color;
+    }
+
+    @media only screen and (max-width: 500px) {
+        & {
+            justify-content: center;
+            margin-top: 10px !important;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+/**=====================
+     Reviews CSS end
+==========================**/

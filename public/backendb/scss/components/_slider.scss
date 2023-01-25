@@ -1,0 +1,39 @@
+/**=====================
+     Slider scss
+==========================**/
+
+.no-arrow {
+     .slick-arrow {
+          display: none !important;
+     }
+}
+
+.slick-slider {
+     .slick-list {
+          margin: 0 -10px;
+
+          @include mq-max(sm) {
+               margin: 0 -6px;
+          }
+
+          .slick-slide {
+
+               >div,
+               >a {
+                    margin: 0 10px;
+
+                    [dir="rtl"] & {
+                         direction: rtl;
+                    }
+
+                    @include mq-max(sm) {
+                         margin: 0 6px;
+                    }
+               }
+          }
+     }
+
+     &.slick-dotted {
+          margin-bottom: 0;
+     }
+}

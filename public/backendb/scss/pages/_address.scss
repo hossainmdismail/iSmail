@@ -1,0 +1,98 @@
+/**=====================
+    Address CSS start
+==========================**/
+.box-head {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+
+    h2 {
+        font-size: 25px;
+        letter-spacing: 1.1px;
+    }
+
+    a {
+        margin-left: 20px;
+
+        [dir="rtl"] & {
+            margin-left: unset;
+            margin-right: 20px;
+        }
+    }
+}
+
+.save-details-box {
+    .save-details {
+        border: 1px solid $inner-bg;
+        padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+        transition: all 0.5s ease-in-out;
+        border-radius: 5px;
+        background-color: $inner-bg;
+        position: relative;
+
+        &.show {
+            border: 1px solid rgba(33, 37, 41, 0.2);
+            box-shadow: 0 0px 10px rgba($black1, $alpha: 0.2);
+        }
+
+        .save-name {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .save-position {
+            position: absolute;
+            top: 20px;
+            background: var(--theme-color);
+            right: 20px;
+            color: $white;
+            padding: 8px 15px;
+            border-radius: 4px;
+
+            [dir="rtl"] & {
+                right: unset;
+                left: 20px;
+            }
+
+            h6 {
+                margin: 0;
+                margin-bottom: -2px;
+                font-weight: 500;
+            }
+        }
+
+        .save-address {
+            p {
+                line-height: 1.4;
+                letter-spacing: 1px;
+                margin: 0 0 calc(2px + (5 - 2) * ((100vw - 320px) / (1920 - 320)));
+            }
+        }
+
+        .mobile {
+            p {
+                &.mobile {
+                    margin-top: 20px;
+                    padding-bottom: 6px;
+                }
+            }
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            margin: -5px;
+
+            a {
+                width: 100%;
+                margin: 5px;
+                background-color: $white;
+                color: $black1;
+            }
+        }
+    }
+}
+
+/**=====================
+    Address CSS end
+==========================**/

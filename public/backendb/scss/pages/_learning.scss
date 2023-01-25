@@ -1,0 +1,56 @@
+/**=====================
+     Learning CSS start
+==========================**/
+@media screen and (min-width: 1200px) and (max-width: 1366px) {
+    .blog-box {
+        .blog-details {
+            .blog-social {
+                li {
+                    &:first-child {
+                        padding-right: 30px;
+                    }
+
+                    +li {
+                        padding-left: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .categories {
+        padding: 20px 0;
+
+        .learning-header {
+            padding-left: 20px;
+        }
+
+        ul {
+            li {
+                padding: 10px 20px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .categories {
+        padding: 15px 0;
+
+        .learning-header {
+            padding-left: 15px;
+        }
+
+        ul {
+            li {
+                padding: 10px 15px;
+            }
+        }
+    }
+}
+
+/**=====================
+       Learning CSS end
+  ==========================**/

@@ -1,0 +1,118 @@
+/*! -----------------------------------------------------------------------------------
+    Template Name: Fastkart Admin
+    Template URI: http://admin.pixelstrap.com/Fastkart/theme
+    Description: This is Admin theme
+    Author: Pixelstrap
+    Author URI: https://themeforest.net/user/pixelstrap
+----------------------------------------------------------------------------------- !*/
+// *** utils ***
+@import "utils/variables";
+@import "utils/breakpoints";
+@import "utils/mixins";
+
+:root {
+    --theme-color: #0da487;
+}
+
+// *** base ***
+@import "base/reset";
+@import "base/typography";
+
+//  *** components ***
+@import "components/according";
+@import "components/alert";
+@import "components/badge";
+@import "components/breadcrumb";
+@import "components/buttons";
+@import "components/card";
+@import "components/color";
+@import "components/dropdown";
+@import "components/form-builder";
+@import "components/form-input";
+@import "components/form-wizard";
+@import "components/forms";
+@import "components/form_builder-2";
+@import "components/icons";
+@import "components/item";
+@import "components/list";
+@import "components/loader";
+@import "components/popover";
+@import "components/print";
+@import "components/slider";
+@import "components/radio";
+@import "components/progress-bar";
+@import "components/ratio";
+@import "components/ribbon";
+@import "components/switch";
+@import "components/tab";
+@import "components/table";
+@import "components/touchspin";
+@import "components/tree";
+@import "components/typeahead-search";
+@import "components/scrollbar";
+@import "components/modal";
+
+//	*** pages ***
+@import "pages/address";
+@import "pages/blog";
+@import "pages/bookmark-app";
+@import "pages/cart";
+@import "pages/chart";
+@import "pages/chat";
+@import "pages/checkout";
+@import "pages/comingsoon";
+@import "pages/contacts";
+@import "pages/dashboard_2";
+@import "pages/dashboard_default";
+@import "pages/ecommerce";
+@import "pages/email-application";
+@import "pages/errorpage";
+@import "pages/faq";
+@import "pages/file";
+@import "pages/gallery";
+@import "pages/internationalization";
+@import "pages/job-search";
+@import "pages/jsgrid";
+@import "pages/kanban";
+@import "pages/knowledgebase";
+@import "pages/landing";
+@import "pages/language";
+@import "pages/learning";
+@import "pages/login";
+@import "pages/megaoption";
+@import "pages/order-history";
+@import "pages/page";
+@import "pages/pricing";
+@import "pages/progress";
+@import "pages/projectlist";
+@import "pages/rating";
+@import "pages/social-app";
+@import "pages/task";
+@import "pages/timeline-v";
+@import "pages/timeliny";
+@import "pages/user-profile";
+@import "pages/wishlist";
+@import "pages/reviewpage";
+@import "pages/setting";
+@import "pages/view-page";
+
+/* ---------------------
+	*** themes ***
+-----------------------*/
+@import "themes/dark";
+@import "themes/dark-sidebar";
+@import "themes/theme-customizer";
+@import "themes/update";
+@import "themes/responsive";
+
+// *** layout ***
+@import "layout/footer";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/navs";
+@import "layout/search";
+@import "layout/select2";
+@import "layout/sidebar";
+@import "layout/rtl";
+@import "layout/product";
+@import "layout/box-layout";

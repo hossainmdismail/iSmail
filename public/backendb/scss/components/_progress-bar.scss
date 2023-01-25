@@ -1,0 +1,396 @@
+/**=====================
+     Progress Bar CSS Start
+==========================**/
+/* ========= Product tracking page Start =========*/
+.progtrckr {
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+
+    @include mq-max(sm) {
+        display: block;
+        margin: 30px 0;
+    }
+
+    li {
+        display: inline-block;
+        text-align: center;
+        margin: 10px 0;
+
+        @include mq-max(sm) {
+            margin: 0;
+            width: 50% !important;
+        }
+
+        h5 {
+            margin-top: 20px;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-weight: 500;
+
+            @include mq-max(sm) {
+                display: block;
+                text-align: left;
+                margin-top: 0;
+
+                [dir="rtl"] & {
+                    text-align: right;
+                }
+            }
+        }
+
+        &:before {
+            position: relative;
+            top: -2px;
+            float: left;
+            left: 50% !important;
+            line-height: 1;
+            transform: translate(-50%, -50%) !important;
+
+            @include mq-max(sm) {
+                position: relative;
+                top: 10px;
+                float: left;
+                left: -2px !important;
+                line-height: 1;
+                transform: translate(-50%, -50%) !important;
+
+                [dir="rtl"] & {
+                    float: right;
+                    right: -32px !important;
+                    left: unset !important;
+                }
+            }
+        }
+
+        &.progtrckr-todo {
+            color: silver;
+            border-top: 4px solid silver;
+            width: 100% !important;
+
+            @include mq-max(sm) {
+                position: relative;
+                text-align: left;
+                margin-left: 30px;
+                align-items: flex-start;
+                padding-bottom: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
+                padding-left: 30px;
+                border-top: unset;
+                border-left: 4px solid silver;
+
+                [dir="rtl"] & {
+                    border-left: none;
+                    border-right: 4px solid silver;
+                    margin-left: 0;
+                    margin-right: 30px;
+                    align-items: flex-end;
+                    padding-left: 0;
+                    padding-right: 30px;
+                    text-align: right;
+                }
+            }
+
+            &:before {
+                content: "\f111";
+                font-family: "Font Awesome 5 Free";
+                color: silver;
+                background-color: $white;
+                font-size: 2.2em;
+
+                @include mq-max(sm) {
+                    position: absolute;
+                    top: 10px;
+                    left: -17px;
+                    line-height: 1;
+                    transform: translateY(-50%);
+
+                    [dir="rtl"] & {
+                        left: unset;
+                        right: -17px;
+                    }
+                }
+            }
+
+            h6 {
+                font-size: 13px;
+                margin-top: 8px;
+            }
+        }
+
+        &.progtrckr-done {
+            color: $black1;
+            border-top: 4px solid var(--theme-color);
+            width: 100% !important;
+
+            @include mq-max(sm) {
+                position: relative;
+                text-align: left;
+                margin-left: 30px;
+                align-items: self-start;
+                padding-bottom: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
+                border-top: unset;
+                border-left: 4px solid var(--theme-color);
+
+                [dir="rtl"] & {
+                    margin-left: 0;
+                    margin-right: 30px;
+                    text-align: right;
+                    border-left: none;
+                    border-right: 4px solid var(--theme-color);
+                    align-items: flex-end;
+                }
+            }
+
+            &:before {
+                @include flex_common;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f00c";
+                color: $white;
+                background-color: var(--theme-color);
+                @include pseudowh($width: 30px, $height: 30px);
+                line-height: 2.2em;
+                border: none;
+                border-radius: 2.2em;
+            }
+
+            h6 {
+                font-size: 13px;
+                margin-top: 8px;
+                color: $font-light;
+            }
+        }
+    }
+}
+
+/* ========= Product tracking page End =========*/
+
+/* ========= Index Dashboard page Start =========*/
+.StepProgress {
+    position: relative;
+    padding-left: 45px;
+    list-style: none;
+    padding-top: 14px;
+
+    &::before {
+        display: inline-block;
+        @include pos;
+        top: 0;
+        left: 14px;
+        @include pseudowh($width: 10px, $height: 100%);
+        border-left: 3px solid $v-light-silver;
+    }
+
+    strong {
+        display: block;
+    }
+
+    &-item {
+        position: relative;
+        counter-increment: list;
+
+        &:not(:last-child) {
+            padding-bottom: 35px;
+        }
+
+        &:nth-child(odd) {
+            &::before {
+                @include pos;
+                top: 6px;
+                left: -35px;
+                @include pseudowh($width: 12px, $height: 12px);
+                background-color: $white;
+                border-radius: 100%;
+                z-index: 1;
+            }
+
+            &::after {
+                @include pos;
+                display: inline-block;
+                top: 0;
+                left: -42px;
+                @include pseudowh($width: 25px, $height: 25px);
+                border: 2px solid var(--theme-color);
+                border-radius: 50%;
+                background-color: var(--theme-color);
+                box-shadow: 0 0 10px var(--theme-color);
+            }
+        }
+
+        &:nth-child(even) {
+            &::before {
+                @include pos;
+                top: 6px;
+                left: -35px;
+                @include pseudowh($width: 12px, $height: 12px);
+                background-color: $white;
+                border-radius: 100%;
+                z-index: 1;
+            }
+
+            &::after {
+                @include pos;
+                display: inline-block;
+                top: 0;
+                left: -42px;
+                @include pseudowh($width: 25px, $height: 25px);
+                border: 2px solid #ff7272;
+                border-radius: 50%;
+                background-color: #ff7272;
+                box-shadow: 0 0 10px #ff7272;
+            }
+        }
+    }
+}
+
+/* ---------- to do list start ----------*/
+.to-do-list {
+    .to-do-item {
+        display: flex;
+        margin-bottom: 20px;
+        border-bottom: 1px solid $lavender;
+        padding-bottom: 10px;
+
+        &:nth-child(n + 4) {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        &:last-child {
+            display: block;
+            margin-top: 10px;
+            padding-bottom: 0;
+        }
+
+        .form-check {
+            padding-left: 0;
+        }
+
+        .to-do-list-name {
+            margin-left: 15px;
+
+            strong {
+                display: block;
+                font-size: 15px;
+                line-height: 1;
+                color: $black1;
+            }
+
+            p {
+                margin-top: 5px;
+            }
+        }
+    }
+}
+
+/* ---------- to do list end ----------*/
+
+/* ---------- Recent Activity start ----------*/
+.recent-activity {
+    .recent-item {
+        @include flex_common;
+        border-bottom: 1px solid $gray-light;
+        margin-bottom: 17px;
+        padding-bottom: 17px;
+
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .recent-icon {
+            display: flex;
+            align-items: center;
+
+            span {
+                margin-right: 10px;
+                font-weight: 600;
+                font-size: 18px;
+            }
+
+            .feather {
+                margin-right: 10px;
+                width: 20px;
+                stroke-width: 2px;
+            }
+
+            p {
+                font-weight: 600;
+            }
+        }
+
+        .recent-timer {
+            h6 {
+                font-weight: 600;
+            }
+
+            .color {
+                &-1 {
+                    color: $light-green;
+                }
+
+                &-2 {
+                    color: $purple;
+                }
+
+                &-3 {
+                    color: $yellow;
+                }
+
+                &-4 {
+                    color: var(--theme-color);
+                }
+            }
+        }
+    }
+}
+
+/* ---------- Recent Activity end ----------*/
+
+/* ---------- Browser States Start ----------*/
+.brower-states {
+    .brower-item {
+        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+        margin-bottom: 19px;
+        border-bottom: 1px solid $gray-light;
+        padding-bottom: 20px;
+
+        &:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .browser-image {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 30px;
+                margin-right: 10px;
+            }
+
+            h5 {
+                font-weight: 600;
+                color: $black1;
+            }
+        }
+
+        .browser-progressbar {
+            h6 {
+                font-size: 15px;
+                color: var(--theme-color);
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+/* ---------- Browser States end ----------*/
+
+/* ========= Index Dashboard page End =========*/
+/**=====================
+     Progress Bar CSS End
+==========================**/

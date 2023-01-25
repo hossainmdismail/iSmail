@@ -1,0 +1,26 @@
+/**=====================
+    Rating CSS Start
+==========================**/
+.rating {
+    display: block;
+
+    [dir="rtl"] & {
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+
+        i {
+            color: #c3c3c3 !important;
+
+            &.theme-color {
+                color: #ffa202 !important;
+            }
+        }
+    }
+}
+
+/**=====================
+    Rating CSS End
+==========================**/

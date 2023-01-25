@@ -1,0 +1,429 @@
+/**=====================
+    Form CSS Start
+==========================**/
+.form-space {
+    margin-bottom: -10px;
+
+    > div {
+        margin-bottom: 10px;
+    }
+}
+
+.form-choose {
+    padding: 0;
+}
+
+.form-control {
+    &:focus {
+        box-shadow: none;
+        border-color: var(--theme-color);
+    }
+}
+
+.bootstrap-tagsinput {
+    background-color: #f9f9f6 !important;
+
+    .tag {
+        font-size: 13px;
+        padding: 3px 15px;
+        line-height: 2;
+        background-color: var(--theme-color);
+        border-radius: 5px;
+
+        [data-role="remove"] {
+            &:hover {
+                box-shadow: none;
+            }
+
+            &:after {
+                content: "\EB99";
+                font-family: remixicon !important;
+                font-style: normal;
+            }
+        }
+    }
+}
+
+.add-option {
+    border-top: 1px solid #efefef;
+    padding-top: 18px;
+    margin-top: 26px;
+    display: block;
+    font-weight: 600;
+}
+
+.select2-container {
+    .select2-dropdown {
+        background-color: $white;
+        border-color: $form-input-border-color !important;
+        box-shadow: 1px 5px 11px 0px #ededed;
+    }
+
+    .select2-search__field {
+        border-color: $form-input-border-color !important;
+    }
+}
+
+.select2-container--default {
+    .select2-results__option--selected {
+        background-color: #f9f9f6;
+    }
+}
+
+.theme-form {
+    .ck-toolbar {
+        border-color: $form-input-border-color !important;
+        background-color: $inner-bg !important;
+    }
+
+    .select2-container {
+        .selection {
+            width: 100%;
+            background-color: $inner-bg !important;
+            border: 1px solid $form-input-border-color;
+
+            .select2-selection {
+                padding: 0;
+                display: flex !important;
+                align-content: center;
+            }
+        }
+    }
+
+    .select2-selection__rendered {
+        width: 100%;
+        display: flex !important;
+        align-items: center;
+        background-color: $inner-bg !important;
+    }
+
+    .ck-content {
+        height: 170px;
+        border-color: $form-input-border-color !important;
+        background-color: $inner-bg !important;
+    }
+
+    &-2 {
+        input[type="text"],
+        input[type="email"],
+        input[type="search"],
+        input[type="password"],
+        input[type="number"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="datetime-local"],
+        input[type="time"],
+        input[type="datetime-local"],
+        input[type="month"],
+        input[type="week"],
+        input[type="url"],
+        textarea,
+        select {
+            padding: 10px 10px !important;
+        }
+    }
+
+    &-2 {
+        input[type="file"] {
+            padding: 6px 10px !important;
+        }
+    }
+
+    textarea {
+        border-color: $form-input-border-color;
+
+        &::-webkit-input-placeholder {
+            color: $form-placeholder-color;
+            font-size: $form-placeholder-font-size;
+            letter-spacing: $form-placeholder-letter-spacing;
+            font-weight: $form-placeholder-font-weight;
+        }
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="search"],
+    input[type="password"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="time"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    input[type="url"],
+    input[type="file"],
+    textarea,
+    select {
+        border-color: $form-input-border-color;
+        background-color: $inner-bg !important;
+        font-size: $form-placeholder-font-size;
+        color: $form-placeholder-color;
+        padding: calc(10px + (12 - 10) * ((100vw - 320px) / (1920 - 320))) 10px;
+        outline: inherit;
+        box-shadow: none;
+
+        &::-webkit-input-placeholder {
+            color: $form-placeholder-color;
+            font-size: $form-placeholder-font-size;
+            letter-spacing: $form-placeholder-letter-spacing;
+            font-weight: $form-placeholder-font-weight;
+        }
+    }
+
+    input[type="file"] {
+        height: auto;
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        border-color: $form-input-border-color;
+        font-size: $form-placeholder-font-size;
+    }
+
+    .checkbox {
+        label {
+            padding-left: 10px;
+        }
+    }
+
+    .form-divider {
+        position: relative;
+        clear: both;
+        height: 0;
+        margin: 30px 0;
+        border-top: 1px solid $light-semi-gray;
+
+        &:before {
+            @include pos($pos: absolute, $content: "Or Signup With");
+            top: -11px;
+            left: 40%;
+            margin-left: -10px;
+            padding: 0 5px;
+            color: $theme-font-color;
+            background: $white;
+        }
+    }
+
+    .login-divider {
+        position: relative;
+        clear: both;
+        height: 0;
+        margin: 30px 0;
+        border-top: 1px solid $light-semi-gray;
+
+        &:before {
+            @include pos($pos: absolute, $content: "Or Login With");
+            top: -11px;
+            left: 40%;
+            margin-left: -10px;
+            padding: 0 5px;
+            color: $theme-font-color;
+            background: $white;
+        }
+    }
+
+    .btn-fb,
+    .btn-twitter,
+    .btn-google,
+    .btn-linkedin {
+        color: $white;
+        width: 100%;
+    }
+
+    .btn-fb {
+        background-color: $fb;
+    }
+
+    .btn-twitter {
+        background-color: $twitter;
+    }
+
+    .btn-google {
+        background-color: $google-plus;
+    }
+
+    .btn-linkedin {
+        background-color: $linkedin;
+    }
+}
+
+.form-inline {
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-bottom: 0;
+
+    .col-form-label {
+        margin-right: 5px;
+    }
+}
+
+.search-form {
+    .form-group {
+        &:before {
+            @include pos;
+            @include pseudowh($width: 1px, $height: 25px);
+            background: $suva-grey;
+            left: 82px;
+            top: 50px;
+        }
+
+        &:after {
+            @include pos($pos: absolute, $content: "\f002");
+            font-family: "FontAwesome";
+            top: 53px;
+            left: 53px;
+            color: $inner-bg;
+        }
+    }
+
+    input {
+        border: 1px solid $light-semi-gray;
+        padding: 10px 10px 10px 70px;
+        border-radius: 10px;
+        background-color: rgba($light-color, 0.3);
+
+        &:focus {
+            outline: none !important;
+        }
+    }
+}
+
+.variation-table {
+    border-color: #efefef;
+
+    .form-control {
+        border-color: #efefef;
+        background-color: $inner-bg !important;
+    }
+
+    &.table {
+        th {
+            font-size: 14px;
+        }
+    }
+}
+
+.seo-view {
+    background-color: $inner-bg;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px dashed #d1d1d1;
+    border-radius: 10px;
+
+    h5 {
+        color: #1a0dab;
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    .link {
+        color: #202124;
+    }
+
+    p {
+        color: #4d5156;
+        font-size: 14px;
+    }
+}
+
+.form-label-align-right {
+    label {
+        text-align: right;
+        padding-top: 17px;
+        font-weight: 500;
+    }
+}
+
+.form-label-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.choose {
+    input {
+        padding-left: 108px !important;
+        position: relative;
+
+        &[type="file"]::file-selector-button {
+            position: absolute;
+            padding: 25px 10px 14px;
+            @include center(vertical);
+            left: 11px;
+            background-color: $inner-bg !important;
+        }
+
+        &[type="file"]::file-selector-button:hover {
+            background-color: rgba($primary-color, 0.2);
+        }
+    }
+}
+
+.roles-form {
+    gap: calc(6px + (20 - 6) * ((100vw - 320px) / (1920 - 320)));
+
+    ::-webkit-scrollbar {
+        height: 3px;
+        background-color: white;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #afafaf;
+        border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-button {
+        display: none;
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        padding: 12px;
+        overflow: auto;
+
+        [dir="rtl"] & {
+            padding-right: 12px;
+        }
+
+        li {
+            width: 100%;
+            white-space: nowrap;
+            min-width: 87px;
+            display: flex;
+            align-items: center;
+
+            &:first-child {
+                font-weight: 500;
+                color: $theme-font-color;
+                width: 100%;
+                min-width: 112px;
+                display: block;
+            }
+        }
+    }
+
+    > div {
+        &:nth-child(odd) {
+            ul {
+                background-color: #f9f9f6;
+                padding: 12px;
+            }
+        }
+    }
+}
+
+.option-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/**=====================
+      Form CSS Ends
+  ==========================**/

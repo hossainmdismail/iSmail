@@ -1,0 +1,104 @@
+/**=====================
+     Settings CSS start
+==========================**/
+.personal-info {
+    display: flex;
+    align-items: flex-start;
+
+    &__img {
+        img {
+            @include pseudowh($width: 150px, $height: 150px);
+            border-radius: 5px;
+            object-fit: cover;
+        }
+    }
+
+    &__uplode {
+        margin-left: calc(10px + (48 - 10) * ((100vw - 320px) / (1920 - 320))) !important;
+
+        p {
+            font-size: calc(14px + (17 - 14) * ((100vw - 320px) / (1920 - 320)));
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        & {
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+
+        &__uplode {
+            margin-left: 0 !important;
+
+            p {
+                margin-top: 10px;
+            }
+        }
+
+        &__img {
+            img {
+                @include pseudowh($width: 130px, $height: 130px);
+                border-radius: 4px;
+            }
+        }
+    }
+}
+
+.uplode-img {
+    position: relative;
+
+    input {
+        position: relative;
+        @include pseudowh($width: 100%, $height: 50px);
+        opacity: 0;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    label {
+        position: absolute;
+        left: 0;
+        background-color: $input-bg-color;
+        padding: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: #9aa4c8;
+        font-size: calc(13px + (15 - 13) * ((100vw - 320px) / (1920 - 320)));
+
+        cursor: pointer;
+
+        &:hover {
+            border: 1px solid rgba(0, 0, 0, 0.3);
+        }
+
+        svg {
+            @include pseudowh($width: 20px, $height: 20px);
+            vertical-align: middle;
+        }
+
+        @media only screen and (max-width: 600px) {
+            & {
+                @include center(horizontal);
+                width: 70%;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        & {
+            label {
+                @include center(horizontal);
+            }
+        }
+    }
+}
+
+.btn--hover {
+    &:hover {
+        background-color: $btn-hover-color;
+    }
+}
+
+/**=====================
+     Settings CSS end
+==========================**/
