@@ -97,7 +97,11 @@ class ExperienceController extends Controller
             $img = ExperienceModels::where('id',$request->id)->first()->logo;
             $path = public_path('uploads/experience/'.$img);
             unlink($path);
-            Image::make($request->image)->save(public_path('uploads/experience/'.$img));
+
+            $img = $request->image;
+            $extention = $img->getClientOriginalExtension();
+            $name = 'A'.rand(1,2000).'D'.rand(1,500).'.'.$extention;
+            Image::make($img)->save(public_path('uploads/experience/'.$name));
             ExperienceModels::find($request->id)->update([
                 'name' => $request->name,
                 'title' => $request->title,
@@ -105,6 +109,7 @@ class ExperienceController extends Controller
                 'startingDate' => $request->startingDate,
                 'endDate' => $request->endDate,
                 'status' =>$request->status,
+                'logo' => $name,
                 'updated_at' =>Carbon::now(),
             ]);
             return redirect()->route('experience.manage')->with('up','Updated');
