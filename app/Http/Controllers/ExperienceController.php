@@ -94,8 +94,8 @@ class ExperienceController extends Controller
                 'startingDate' => 'required',
                 'image' => 'required | image:jpeg,jpg,png | max:1000',
             ]);
-            $img = ExperienceModels::where('id',$request->id)->first()->logo;
-            $path = public_path('uploads/experience/'.$img);
+            $unimg = ExperienceModels::where('id',$request->id)->first()->logo;
+            $path = public_path('uploads/experience/'.$unimg);
             unlink($path);
 
             $img = $request->image;
